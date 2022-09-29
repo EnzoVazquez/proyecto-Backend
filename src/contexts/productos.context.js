@@ -77,15 +77,11 @@ class contenedor{
 
     update = async(objeto)=>{
         let productos = await this.getAll();
-        let id = objeto.id;
-        let title = objeto.title;
-        let price = objeto.price;
-        let thumbnail = obj.thumbnail;
-        productos.map(function(newInfo){
-            if(newInfo.id == id){
-                newInfo.title = title;
-                newInfo.prices = price;
-                newInfo.thumbnail = thumbnail;
+        productos.map(function(item){
+            if(item.id == objeto.id){
+                item.title = objeto.title;
+                item.price = objeto.price;
+                item.thumbnail = item.thumbnail;
             }
         })
         await fs.promises.writeFile(path,JSON.stringify(productos,null,'\t'));
