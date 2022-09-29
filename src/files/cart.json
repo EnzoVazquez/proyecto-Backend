@@ -1,0 +1,20 @@
+[
+	{
+		"title": "producto Nuevo actualizado",
+		"price": 9000,
+		"thumbnail": "...",
+		"id": 0,
+		"products": []
+	},
+	{
+		"title": "producto Nuevo actualizado",
+		"price": 9000,
+		"thumbnail": "...",
+		"id": 1,
+		"products": []
+	},
+	{
+		"id": 2,
+		"products": []
+	}
+]
