@@ -1,19 +1,23 @@
-<div>
+
+<div class="login">
     <h1>Inicia sesion</h1>
-    <form id="loginForm">
-            <label>Email</label>
-            <input name="email">
-            <label>Contraseña</label>
-            <input type="password" name="password">
-            <input type="submit">
-    </form>
-</div>
-<div>
-    <p>logueate con Github</p>
-    <a href="/api/sessions/github"><button>Github</button></a>
-</div>
-<div>
-    <h2>¿No tienes una cuenta?Registrate!</h2>
-    <a href="http://localhost:8080/register"><button>ir al registro</button></a>
+    <div>
+        <form id="loginForm">
+                <label>Email</label>
+                <input name="email" placeholder="escribe tu email">
+                <label>Contraseña</label>
+                <input type="password" name="password" placeholder="escribe tu contraseña">
+                <input type="submit">
+        </form>
+    </div>
+    <div>
+        <p>logueate con Github</p>
+        <a href="/api/sessions/github"><button>Github</button></a>
+    </div>
+    <div>
+        <h2>¿No tienes una cuenta?Registrate!</h2>
+        <a href="http://localhost:8080/register"><button>ir al registro</button></a>
+    </div>
 </div>
 <script src="/js/login.js"></script>
+<link rel="stylesheet" href="css/login.css"
