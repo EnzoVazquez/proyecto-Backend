@@ -29,19 +29,24 @@ router.delete('/:id', async(req,res)=>{
 })
 
 //DELETE "/:id/products/:productId"
-router.delete("/:id/pproducts/:productId", async(req,res)=>{
+router.delete("/:id/products/:productId", async(req,res)=>{
     let id = req.params.id
     let productId = req.params.productId;
     await container.deleteProduct(id, productId);
 })
 //POST
 router.post('/',async(req,res)=>{
+   try{
     let cart = req.body;
-    await container.save(cart)
+    await container.save(cart);
+    res.send(cart)
+   }catch(error){
+    console.log(error)
+   }
 })
 
 //POST "/:id"
-router.post('/:id/products', async(req,res)=>{
+router.post('/:id/products/:cartId', async(req,res)=>{
     await container.addProductToCart(req);
 })
 export default router;

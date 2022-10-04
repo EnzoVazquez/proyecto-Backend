@@ -36,12 +36,14 @@ class cartContext {
                 carts.push(cart);
                 await fs.promises.writeFile(this.path, JSON.stringify(carts, null, '\t'));
                 console.log(`carrito añadido con el id ${cart.id}`);
+                return carts
             }else{
                 cart.id = carts[carts.length-1].id+1;
                 cart.products = [];
                 carts.push(cart);
                 await fs.promises.writeFile(this.path, JSON.stringify(carts, null, '\t'));
                 console.log(`carrito añadido con el id ${cart.id}`);
+                return carts
             }
         } catch (error) {
             console.log(error);
@@ -101,8 +103,8 @@ class cartContext {
     addProductToCart = async(req) =>{
         try{
             let productId = req.params.id;
-            let cartId = req.body.id
-
+            let cartId = req.params.cartId
+            console.log(cartId)
             const carrito = await this.getById(cartId);
             if(!carrito){
                 console.log(`no se encontro el carrito con el id ${cartId}`);
